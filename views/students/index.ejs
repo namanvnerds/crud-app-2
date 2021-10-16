@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog</title>
+</head>
+<body>
+  <div class="container">
+      <h1 class="md-4">Students Data</h1>
+      <a href="/students/new" class="btn btn-success btn-rounded"> New Student</a> 
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <!-- <th scope="col">#</th> -->
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Mobile No</th>
+                  <th scope="col">email</th>
+                  <th scope="col">profilePic</th>
+                </tr>
+              </thead>
+              <tbody>
+              
+              <% students.forEach(student =>{ %>
+                <tr>
+                  <!-- <th scope="row">1</th> -->
+                  <td><%= student.firstName %></td>
+                  <td><%= student.lastName %></td>
+                  <td><%= student.age %></td>
+                  <td><%= student.mobileNo %></td>
+                  <td><%= student.email %></td>
+                  <td><%= student.profilePic %></td>
+                  <td href="student/edit/<%= student.firstName %>" class="btn btn-info">Edit</td>
+                  <td></td>
+                </tr>
+              <% }) %>
+              </tbody>
+              <!-- {{/each}} -->
+            </table>
+            
+
+  </div>
+</body>
+</html>
